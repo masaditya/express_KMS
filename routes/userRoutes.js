@@ -5,7 +5,7 @@ const userRouter = require("../controller/User");
 //route login
 router.post("/login", userRouter.login);
 
-//route ke server 2
+//route register
 router.post("/register", userRouter.register);
 
 module.exports = router;

@@ -23,29 +23,42 @@ module.exports = {
   login: (req, res) => {
     const { username, password } = req.body;
     const jwtSecret = process.env.JWTSECRET || "";
-
+    console.log(jwtSecret);
     User.findOne({
       where: {
         username: username,
       },
-    }).then(result => {
-      authBcrypt.compare(password, result.password, (error, match) => {
-        if (match) {
-          jwt.sign(
-            {
-              id_user: result.id_user,
-              username: result.username,
-            },
-            jwtSecret,
-            (error, token) => {
-              res.json({
-                success: true,
-                token: token,
-              });
-            }
-          );
-        }
+    })
+      .then(result => {
+        authBcrypt.compare(password, result.password, (error, match) => {
+          if (match) {
+            jwt.sign(
+              {
+                id_user: result.id_user,
+                username: result.username,
+              },
+              jwtSecret,
+              (error, token) => {
+                console.log(error, token);
+                res.json({
+                  success: true,
+                  token: token,
+                });
+              }
+            );
+          } else {
+            res.json({
+              success: false,
+              token: null,
+            });
+          }
+        });
+      })
+      .catch(error => {
+        res.json({
+          success: false,
+          token: null,
+        });
       });
-    });
   },
 };

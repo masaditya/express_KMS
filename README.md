@@ -1,4 +1,4 @@
-### Kartu Menuju Sehat (KMS) pada Bayi
+# Kartu Menuju Sehat (KMS) pada Bayi
 
 Nama Kelompok : Rafqi Agatha, Aditya Eka
 
@@ -7,19 +7,19 @@ Nama Kelompok : Rafqi Agatha, Aditya Eka
 clone repo ini
 
 ```bash
-$ git clone https://github.com/masaditya/express_KMS.git
+git clone https://github.com/masaditya/express_KMS.git
 ```
 
 masuk ke directory project
 
 ```bash
-$ cd express_KMS
+cd express_KMS
 ```
 
 Lalu run server dengan command
 
 ```bash
-$ npm start
+npm start
 ```
 
 > Note :exclamation: pastikan database mysql telah terhubung, agar tidak ada error ketika awal run project
