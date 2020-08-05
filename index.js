@@ -7,6 +7,9 @@ const verifyToken = require("./utils/verifyToken");
 
 // routes
 const userRoutes = require("./routes/userRoutes");
+const balitaRoutes = require("./routes/balitaRoutes");
+const timbangRoutes = require("./routes/timbangRoutes");
+
 
 app.use(express.json());
 
@@ -16,6 +19,8 @@ app.use(verifyToken);
 
 // CRUD below
 
+app.use("/balita", balitaRoutes)
+app.use("/timbang", timbangRoutes)
 
 
 // CRUD
