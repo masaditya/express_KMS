@@ -11,11 +11,11 @@ git clone https://github.com/masaditya/express_KMS.git
 ```
 
 masuk ke directory project
-
+Aku kedinginan....
 ```bash
 cd express_KMS
 ```
-
+Tolong di tambah kan yaa
 Lalu run server dengan command
 
 ```bash
